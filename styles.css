@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e7d0f9, #fbd4ff);
+  font-family: "Georgia", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 600px;
+  height: 350px;
+  text-align: center;
+}
+
+/* Notification text for unopened mail */
+.mail-notice {
+  font-size: 30px;
+  color: #4a235a;
+  margin-bottom: 10px;
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* When opened, fade out the mail notice */
+.opened .mail-notice {
+  opacity: 0;
+}
+
+/* Envelope styling */
+.envelope-container {
+  position: relative;
+}
+
+.envelope {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Letter styling */
+.letter-container {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  width: 800px;
+  max-width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.letter-content {
+  color: #4a235a;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.letter-content h1 {
+  font-family: "Lucida Calligraphy", cursive;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #8b008b;
+}
+
+.letter-content p {
+  margin-bottom: 10px;
+}
+
+/* Transition states */
+.opened .envelope {
+  transform: rotateY(180deg) scale(0.5);
+  opacity: 0;
+}
+
+.opened .letter-container {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Back button styling */
+.back-button {
+  display: inline-block;
+  margin-top: 15px;
+  background: #dda0dd; /* Light purple */
+  color: #4a235a;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Georgia", serif;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: #c973c9; /* Slightly darker purple */
+}
+
+.lights {
+  width: 100px;
+}
