@@ -6,26 +6,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
 .container {
   position: relative;
-  width: 600px;
-  height: 350px;
+  width: 90%;
+  max-width: 600px;
   text-align: center;
 }
 
 /* Notification text for unopened mail */
 .mail-notice {
-  font-size: 30px;
+  font-size: 1.2rem;
   color: #4a235a;
   margin-bottom: 10px;
   transition: opacity 0.6s ease-in-out;
 }
 
-/* When opened, fade out the mail notice */
 .opened .mail-notice {
   opacity: 0;
 }
@@ -36,7 +35,8 @@ body {
 }
 
 .envelope {
-  width: 200px;
+  width: 150px;
+  max-width: 80%;
   cursor: pointer;
   transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
@@ -44,10 +44,10 @@ body {
 /* Letter styling */
 .letter-container {
   position: absolute;
-  top: 120px;
+  top: 50%;
   left: 50%;
-  width: 800px;
-  max-width: 100%;
+  width: 90%;
+  max-width: 400px;
   padding: 20px;
   background: #fff;
   border-radius: 8px;
@@ -59,8 +59,8 @@ body {
 
 .letter-content {
   color: #4a235a;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .letter-content h1 {
@@ -68,6 +68,7 @@ body {
   margin-bottom: 15px;
   text-align: center;
   color: #8b008b;
+  font-size: 1.5rem;
 }
 
 .letter-content p {
@@ -89,21 +90,56 @@ body {
 .back-button {
   display: inline-block;
   margin-top: 15px;
-  background: #dda0dd; /* Light purple */
+  background: #dda0dd;
   color: #4a235a;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-family: "Georgia", serif;
   transition: background 0.3s ease;
 }
 
 .back-button:hover {
-  background: #c973c9; /* Slightly darker purple */
+  background: #c973c9;
 }
 
-.lights {
-  width: 100px;
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .mail-notice {
+    font-size: 1rem;
+  }
+
+  .envelope {
+    width: 120px;
+  }
+
+  .letter-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .letter-content {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mail-notice {
+    font-size: 0.9rem;
+  }
+
+  .letter-content h1 {
+    font-size: 1rem;
+  }
+
+  .letter-content {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .back-button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }
